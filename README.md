@@ -6,6 +6,28 @@ _There already is [a completion](https://github.com/fish-shell/fish-shell/blob/m
 for `npm run` command but for some reason it mess with the prompt, until I find
 the solution I will use this non-optimised version._
 
+## Script description
+
+It is possible to specify a description of a script by adding a shell comment at
+the end of the script in your `package.json`:
+```json
+{
+  "scripts": {
+    "clean": "rm -rf dist/ # Clean the project",
+    "build": "node scripts/build # Build the project",
+    "publish": "node publish",
+  }
+}
+```
+
+Which will give for completion:
+```sh
+$ npmr
+build      (Build the project)
+clean      (Clean the project)
+publish         (node publish)
+```
+
 ## Installation
 
 ```sh
